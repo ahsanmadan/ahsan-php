@@ -32,7 +32,7 @@
                     <div class="p-4">
                         <div class="card-body">
                             <h5 class="card-title">Data siswa SMK MUDA</h5>
-                            <a class="btn btn-dark my-3" href="tambah.php">Tambah Data Siswa</a>
+                            <a class="btn btn-dark my-3" href="tambah-siswa.php">Tambah Data Siswa</a>
                         </div>
 
                         <table class="table table-bordered" id="myTable">
@@ -48,26 +48,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <<?php
-                                    include('config/koneksi.php');
-                                    $no = 1;
-                                    $query = mysqli_query($connection, "SELECT * FROM siswa_muda");
-                                    while ($data = mysqli_fetch_array($query)) {
-                                    ?> <tr>
-                                    <td><?php echo $no; ?></td>
-                                    <td><?php echo $data['nisn'] ?></td>
-                                    <td><?php echo $data['nama_siswa'] ?></td>
-                                    <td><?php echo $data['jurusan'] ?></td>
-                                    <td><?php echo $data['jenis_kelamin'] ?></td>
-                                    <td><?php echo $data['alamat'] ?></td>
-                                    <td class="text-center d-flex flex-row">
-                                        <a href="edit-siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-dark me-3">EDIT</a>
-                                        <a href="hapus-siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger">DELETE</a>
-                                    </td>
+                                <?php
+                                include('config/koneksi.php');
+                                $no = 1;
+                                $query = "SELECT * FROM siswa_muda";
+                                $conn = mysqli_query($connection, $query);
+                                while ($data = mysqli_fetch_array($conn)) {
+                                ?> <tr>
+                                        <td><?php echo $no; ?></td>
+                                        <td><?php echo $data['nisn'] ?></td>
+                                        <td><?php echo $data['nama_siswa'] ?></td>
+                                        <td><?php echo $data['jurusan'] ?></td>
+                                        <td><?php echo $data['jenis_kelamin'] ?></td>
+                                        <td><?php echo $data['alamat'] ?></td>
+                                        <td class="text-center d-flex flex-row">
+                                            <a href="edit-siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-dark me-3">EDIT</a>
+                                            <a onclick="return confirm('Apakah anda yakin?')" href="aksi-hapus-siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger">DELETE</a>
+                                        </td>
                                     </tr>
 
                                 <?php $no++;
-                                    } ?>
+                                } ?>
                             </tbody>
                         </table>
                     </div>

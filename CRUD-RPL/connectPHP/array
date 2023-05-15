@@ -1,0 +1,2 @@
+buah=["apel","manggis","jeruk"]
+print(buah)
