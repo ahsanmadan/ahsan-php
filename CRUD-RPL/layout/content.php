@@ -13,4 +13,5 @@
 <?php
 elseif ($module == "siswa") :
     include "module/siswa/siswa-view.php";
-endif; ?>
+endif;
+?>
