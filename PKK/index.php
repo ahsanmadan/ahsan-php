@@ -2,182 +2,295 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
-  <title>MudaMart</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | The best official game store of all time</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="static/css/font.css" />
+  <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </head>
 <style>
-  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-  @import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@500&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-
-  .icon {
-    list-style: none;
-    margin-right: 18px;
-    color: #f2f2f2;
+  .manav {
+    background-color: white;
   }
 
-  .menu {
-    color: #f2f2f2;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: "Montserrat Alternates", sans-serif;
-    border-radius: 8px;
-    padding: 8px;
+  .mashadow {
+    box-shadow: 0 5px 5px -5px #333;
   }
 
-  .menu-2 {
-    color: #f2f2f2;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 20px;
-    margin-left: 20px;
-    font-family: "Varela Round", sans-serif;
-
-    border-radius: 8px;
-    padding: 8px;
+  .mtitle {
+    font-size: 22px;
+    font-family: "KoHo", sans-serif;
   }
 
-  .shdow {
-    box-shadow: 0px 8px 10px -6px lightgray;
-  }
-
-  .brand {
-    font-family: "Lexend Giga", sans-serif;
-    color: #f2f2f2;
-    font-weight: 900;
-    padding: 5px;
-    font-size: 18px;
-  }
-
-  .background {
-    background-color: #f2f2f2;
-  }
-
-  .mybg-nav {
-    background-color: #28482E;
+  .tab>li>a {
+    color: black;
+    font-family: "KoHo", sans-serif;
+    font-weight: 500;
   }
 
   .swiper {
-    width: 850px;
-    height: 400px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    border: 2px solid gray;
+    width: 100%;
+    height: 450px;
   }
 
-  .swiper-slide>img {
-    width: 850px;
-    height: 400px;
-  }
-
-  .swiper-button-prev::after,
-  .swiper-button-next:after {
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
-  }
-
-  .swiper-pagination-bullet {
+  .maback {
     background-color: white;
   }
+
+  .fontkoho {
+    font-family: "KoHo", sans-serif;
+  }
+
+  .banner {
+    background: #a770ef;
+    background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+    background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  }
+
+  .dec>h5>a {
+    text-decoration: none;
+  }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<div class="background">
 
-  <body>
-    <!-- navbar -->
-    <nav class="mybg-nav nav navbar p-2">
-      <div class="container-fluid d-flex flex-row">
-        <span class="brand m-1"><i class="bi bi-cart me-2"></i>MudaMart</span>
-        <div class="justify-content-end">
-          <div class="d-flex flex-row">
-            <a target="_blank" href="https://www.facebook.com/smkmuhammadiyah02pekanbaru">
-              <li class="icon"><i class="bi bi-facebook"></i></li>
-            </a>
+<body style="background-color: #d2d2d2">
+  <!-- navbar area -->
+  <div class="manav">
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="/" class="navbar-brand mtitle" aria-current="page"><b>ILLUMINA.</b>GAME</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+  </div>
+  <div class="manav mashadow sticky-top">
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills tab">
+          <li class="nav-item">
+            <a href="#" class="nav-link me-3" aria-current="page">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">COLLECTIONS</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a href="#" class="nav-link">BROWSE</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+  </div>
+  <!-- end of navbar area -->
+  <!-- slider area -->
 
-            <a target="_blank" href="https://www.instagram.com/smkmuda_pekanbaru/">
-              <li class="icon"><i class="bi bi-instagram"></i></li>
-            </a>
-
-            <a target="_blank" href="https://wa.me/6289621500376">
-              <li class="icon"><i class="bi bi-whatsapp"></i></li>
-            </a>
-
-            <a target="_blank" href="https://www.youtube.com/c/mudatvpekanbaru">
-              <li class="icon"><i class="bi bi-youtube"></i></li>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <ul class="mybg-nav shdow sticky-top nav justify-content-center p-2">
-      <li class="nav-item">
-        <a class="menu" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="menu-2" href="#">Market</a>
-      </li>
-      <li class="nav-item">
-        <a class="menu" href="#">About</a>
-      </li>
-    </ul>
-    <!-- akhir nav -->
-
-    <!-- Slider main container -->
-    <div class="swiper mt-3 container">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="image/Slider/1.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="image/Slider/2.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="image/Slider/3.jpg" alt="">
-        </div>
-      </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-      <!-- akhir slider -->
+  <div class="swiper my-5 shadow">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="static/image/1.png" alt="" /></div>
+      <div class="swiper-slide"><img src="static/image/2.png" alt="" /></div>
+      <div class="swiper-slide"><img src="static/image/3.png" alt="" /></div>
     </div>
 
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- end of slider area -->
+  <!-- galeri area -->
+  <div class="maback shadow">
+    <div class="container p-5">
+      <div class="row">
+        <a data-toggle="lightbox" data-gallery="gallery" class="col-md-4 mb-3">
+          <img src="static/image/galeri/g-1.avif" class="img-fluid rounded">
+        </a>
+        <a data-toggle="lightbox" data-gallery="gallery" class="col-md-4 mb-3">
+          <img src="static/image/galeri/g-2.avif" class="img-fluid rounded">
+        </a>
+        <a data-toggle="lightbox" data-gallery="gallery" class="col-md-4 mb-3">
+          <img src="static/image/galeri/g-3.avif" class="img-fluid rounded">
+        </a>
+      </div>
+      <div class="row">
+        <a data-toggle="lightbox" data-gallery="gallery" class="col-md-4 mb-3">
+          <img src="static/image/galeri/g-4.avif" class="img-fluid rounded">
+        </a>
+        <a data-toggle="lightbox" data-gallery="gallery" class="col-md-4 mb-3">
+          <img src="static/image/galeri/g-5.avif" class="img-fluid rounded">
+        </a>
+        <a data-toggle="lightbox" data-gallery="gallery" class="col-md-4 mb-3">
+          <img src="static/image/galeri/g-6.avif" class="img-fluid rounded">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- end of promotion area -->
 
-</div>
+  <!-- new games -->
+  <div class="maback shadow my-5">
+    <div class="container-fluid">
+      <div class="px-lg-5">
 
-<script>
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
+        <!-- For demo purpose -->
+        <div class="row py-5">
+          <div class="col-lg-12 mx-auto">
+            <div class="text-white p-5 shadow rounded banner">
+              <h1 class="display-4">The most Popular Game</h1>
+            </div>
+          </div>
+        </div>
+        <!-- End -->
 
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
+        <div class="row">
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g1.webp" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec dec">
+                <h5> <a href="#" class="text-dark">EA SPORTS™ FIFA 23</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-      delay:  3000,
-    },
-  });
-</script>
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g2.webp" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Grand Theft Auto V</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g3.webp" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Genshin Impact</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g4.avif" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">eFootball™ 2023</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g5.webp" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Diablo® IV</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g6.avif" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Call of Duty®</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g7.avif" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">NBA 2K23</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g8.avif" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Fortnite</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g9.webp" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">FINAL FANTASY XVI</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/g10.webp" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Beat Saber</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Lorem ipsum dolor</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Gallery item -->
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white rounded shadow"><img src="static/image/top-game/" alt="" class="img-fluid card-img-top">
+              <div class="p-4 dec">
+                <h5> <a href="#" class="text-dark">Lorem ipsum dolor</a></h5>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+        </div>
+        <div class="py-5 text-right"><a href="#" class="btn btn-dark px-5 py-3 text-uppercase">Show me more</a></div>
+      </div>
+    </div>
+  </div>
+  <!-- end new games -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      autoplay: {
+        delay: 1800,
+      },
+    });
+  </script>
 </body>
 
 </html>
