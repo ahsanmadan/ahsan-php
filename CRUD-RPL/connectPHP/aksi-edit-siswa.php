@@ -17,7 +17,7 @@ WHERE nisn = '$nisn'";
 if ($connection->query($query)) {
     echo "<script>
         alert('Data Berhasil Di simpan');
-        window.location = 'tampil-siswa.php';
+        window.location = 't';
     </script>";
 } else {
     echo "<p>Data gagal Disimpan!</p>";

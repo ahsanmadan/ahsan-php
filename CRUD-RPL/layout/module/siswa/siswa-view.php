@@ -1,3 +1,10 @@
+<script>
+    function modalHapus() {
+        $('#modalHapus').on('shown.bs.modal', function() {
+            $('#myInput').trigger('focus')
+        })
+    }
+</script>
 <div class="card">
     <div class="card-header">
         <h3>Data siswa</h3>
@@ -37,8 +44,8 @@
                         <td><?= $data["jurusan"]; ?></td>
                         <td><?= $data["jenis_kelamin"]; ?></td>
                         <td>
-                            <a href="module/siswa/aksi.php?module=siswa&act=edit" class="btn btn-warning">Edit</a>
-                            <a onclick="return confirm('Apakah anda yakin menghapus <?= $data['nama_siswa'] . '?'  ?>')" href="module/siswa/aksi.php?module=siswa&act=delete&id=<?= $data["nisn"] ?>" class="btn btn-danger">Hapus</a>
+                            <a href="?module=siswa-edit&id=<?= $data['nisn']; ?>" class="btn btn-warning">Edit</a>
+                            <a href="#" onclick="function modalHapus()" data-toggle="modal" data-target="#modalHapus<?php echo $no; ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                 <?php $no++;
@@ -50,7 +57,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="siswa-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalHapus<?php echo $no; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -73,12 +80,12 @@
                         <label for="jurusan" class="form-table">Jurusan</label>
                         <select name="jurusan" class="custom-select">
                             <option selected disabled>Choose..</option>
-                            <option value="TJKT">Teknik Jaringan Komputer dan Telekomunikasi</option>
-                            <option value="DKV">Desain Komunikasi Visual</option>
-                            <option value="PPLG">Pengembangan Perangkat Lunak dan Gim</option>
-                            <option value="MPLB">Manajemen Perkantoran dan Layanan Bisnis</option>
-                            <option value="AKL">Akutansi dan Keuangan Lembaga</option>
-                            <option value="Pemasaran">Bisnis Digital</option>
+                            <option value="TJKT">TJKT</option>
+                            <option value="DKV">DKV</option>
+                            <option value="PPLG">PPLG</option>
+                            <option value="MPLB">MPLB</option>
+                            <option value="AKL">AKL</option>
+                            <option value="Pemasaran">Pemasaran</option>
                         </select>
                     </div>
                     <div class="mb-3">

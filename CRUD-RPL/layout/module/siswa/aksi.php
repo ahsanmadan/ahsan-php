@@ -44,4 +44,26 @@ if ($module == 'siswa' and $act == 'insert') {
             window.location = '../../media.php?module=siswa';
             </script>";
     }
+} elseif ($module == 'siswa' and $act == 'edit') {
+    $nisn = $_GET['id'];
+    $nama = $_POST['nama'];
+    $jurusan = $_POST['jurusan'];
+    $kelamin = $_POST['kelamin'];
+    $nohp = $_POST['nohp'];
+    $alamat = $_POST['alamat'];
+    $query = "UPDATE siswa_muda SET nama_siswa = '$nama', jurusan = '$jurusan', jenis_kelamin ='$kelamin',no_hp = '$nohp', alamat = '$alamat'
+    WHERE nisn = '$nisn'";
+
+
+    if ($connection->query($query)) {
+        echo "<script>
+            alert('Data Siswa Berhasil diedit')
+            window.location = '../../media.php?module=siswa';
+            </script>";
+    } else {
+        echo "<script>
+            alert('Data siswa gagal diedit')
+            window.location = '../../media.php?module=siswa';
+            </script>";
+    }
 }
