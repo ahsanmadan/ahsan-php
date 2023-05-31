@@ -12,10 +12,19 @@ if ($module == "" or $module == "home") : ?>
         </div>
     </div>
 <?php
+
+elseif ($module == "user") :
+    include "module/user/user-view.php";
+
 elseif ($module == "siswa") :
     include "module/siswa/siswa-view.php";
 
 elseif ($module == "siswa-edit") :
     include "module/siswa/siswa-edit.php";
+
+// bagian buku
+elseif ($module == "buku") :
+    include "module/buku/buku-view.php";
+
 endif;
 ?>

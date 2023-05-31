@@ -53,7 +53,7 @@ $data = mysqli_fetch_array($conn)
                 <input type="text" name="alamat" class="form-control" placeholder="Alamat Siswa" value="<?= $data['alamat']; ?>">
             </div>
             <div class=" modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a type="button" href="?module=siswa" class="btn btn-secondary" data-dismiss="modal">Close</a>
                 <input class="btn btn-purple" type="submit" value="Ubah">
             </div>
         </form>

@@ -17,7 +17,7 @@
             <i class="fas fa-users"></i>
             Data siswa
         </a>
-        <a href="" class="dashboard-nav-item">
+        <a href="?module=buku" class="dashboard-nav-item">
             <i class="fas fa-book"></i>
             Data buku
         </a>
@@ -33,6 +33,11 @@
 
             </div>
         </div>
+
+        <a href="?module=user" class="dashboard-nav-item">
+            <i class="fas fa-user"></i>
+            Data user
+        </a>
 
         <div class="nav-item-divider"></div>
         <a href="#" class="dashboard-nav-item">

@@ -17,7 +17,7 @@
         endif;
         session_destroy();
         ?>
-        <a href="module/siswa/siswa-tambah.php" class="btn btn-purple" data-toggle="modal" data-target="#siswa-modal">Tambah data</a>
+        <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#siswa-modal">Tambah data</button>
         <table class="table table-striped mt-3">
             <thead>
                 <th>No.</th>
@@ -45,7 +45,7 @@
                         <td><?= $data["jenis_kelamin"]; ?></td>
                         <td>
                             <a href="?module=siswa-edit&id=<?= $data['nisn']; ?>" class="btn btn-warning">Edit</a>
-                            <a href="#" onclick="function modalHapus()" data-toggle="modal" data-target="#modalHapus<?php echo $no; ?>" class="btn btn-danger">Hapus</a>
+                            <a href="module/siswa/aksi.php?module=siswa&act=delete&id=<?= $data['nisn']; ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                 <?php $no++;
@@ -57,7 +57,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="modalHapus<?php echo $no; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="siswa-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -70,15 +70,15 @@
                 <form action="module/siswa/aksi.php?module=siswa&act=insert" method="post">
                     <div class="mb-3">
                         <label for="nisn" class="form-table">NISN</label>
-                        <input type="text" name="nisn" class="form-control" placeholder="NISN Siswa">
+                        <input type="text" name="nisn" class="form-control" placeholder="NISN Siswa" required>
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-table">Nama Siswa</label>
-                        <input type="text" name="nama" class="form-control" placeholder="Nama Siswa">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Siswa" required>
                     </div>
                     <div class="mb-3">
                         <label for="jurusan" class="form-table">Jurusan</label>
-                        <select name="jurusan" class="custom-select">
+                        <select name="jurusan" class="custom-select" required>
                             <option selected disabled>Choose..</option>
                             <option value="TJKT">TJKT</option>
                             <option value="DKV">DKV</option>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="kelamin" class="form-table">Jenis Kelamin</label>
-                        <select name="kelamin" class="custom-select">
+                        <select name="kelamin" class="custom-select" required>
                             <option selected disabled>Choose..</option>
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
@@ -98,11 +98,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="kelamin" class="form-table">Nomor Handphone</label>
-                        <input type="text" name="nohp" class="form-control" placeholder="08123456789">
+                        <input type="text" name="nohp" class="form-control" placeholder="08123456789" required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-table">Alamat</label>
-                        <input type="text" name="alamat" class="form-control" placeholder="Alamat Siswa">
+                        <input type="text" name="alamat" class="form-control" placeholder="Alamat Siswa" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

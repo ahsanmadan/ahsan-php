@@ -8,16 +8,17 @@ $module = $_GET['module'];
 $act = $_GET['act'];
 
 // tambah siswa
-if ($module == 'siswa' and $act == 'insert') {
-    $nisn = $_POST['nisn'];
-    $nama = $_POST['nama'];
-    $jurusan = $_POST['jurusan'];
-    $kelamin = $_POST['kelamin'];
-    $nohp = $_POST['nohp'];
-    $alamat = $_POST['alamat'];
+if ($module == 'buku' and $act == 'insert') {
+    $isbn = $_POST['isbn'];
+    $judul = $_POST['judul'];
+    $ngarang = $_POST['ngarang'];
+    $nerbit = $_POST['nerbit'];
+    $tater = $_POST['tater'];
+    $jenis = $_POST['jenis'];
+    $stok = $_POST['stok'];
 
-    $query = "INSERT INTO siswa_muda (nisn, nama_siswa, jurusan, jenis_kelamin, no_hp, alamat) 
-    VALUES ('$nisn', '$nama', '$jurusan', '$kelamin','$nohp', '$alamat') ";
+    $query = "INSERT INTO siswa_muda (isbn, judul_buku, pengarang, penerbit, tahun_terbit, jenis_buku, stok) 
+    VALUES ('$isbn', '$judul_buku', '$ngarang','$nerbit', '$tater' , '$jenis','$stok') ";
 
     if ($connection->query($query)) {
         session_start();
@@ -51,12 +52,8 @@ if ($module == 'siswa' and $act == 'insert') {
     $kelamin = $_POST['kelamin'];
     $nohp = $_POST['nohp'];
     $alamat = $_POST['alamat'];
-    $query = "UPDATE siswa_muda SET nama_siswa = '$nama', 
-                jurusan = '$jurusan', 
-                jenis_kelamin ='$kelamin',
-                no_hp = '$nohp', 
-                alamat = '$alamat'
-                WHERE nisn = '$nisn'";
+    $query = "UPDATE siswa_muda SET nama_siswa = '$nama', jurusan = '$jurusan', jenis_kelamin ='$kelamin',no_hp = '$nohp', alamat = '$alamat'
+    WHERE nisn = '$nisn'";
 
 
     if ($connection->query($query)) {
