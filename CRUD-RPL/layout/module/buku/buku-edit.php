@@ -1,7 +1,7 @@
 <?php
 // query select data siswa
-$isbn = $_GET['id'];
-$query = "SELECT * FROM siswa_buku";
+$id = $_GET['id'];
+$query = "SELECT * FROM siswa_buku WHERE isbn = $id";
 $conn = mysqli_query($connection, $query);
 $data = mysqli_fetch_array($conn)
 ?>

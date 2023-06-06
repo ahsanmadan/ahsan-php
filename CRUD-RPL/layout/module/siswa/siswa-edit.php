@@ -1,9 +1,9 @@
 <?php
 // query select data siswa
-$nisn = $_GET['id'];
-$query = "SELECT * FROM siswa_muda";
+$id = $_GET['id'];
+$query = "SELECT * FROM siswa_muda WHERE nisn = $id";
 $conn = mysqli_query($connection, $query);
-$data = mysqli_fetch_array($conn)
+$data = mysqli_fetch_array($conn);
 ?>
 
 <div class="card">
