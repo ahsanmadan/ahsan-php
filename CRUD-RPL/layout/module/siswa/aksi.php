@@ -34,15 +34,13 @@ if ($module == 'siswa' and $act == 'insert') {
     $query = "DELETE FROM siswa_muda WHERE nisn = '$nisn'";
 
     if ($connection->query($query)) {
-        echo "<script>
-            alert('Data Siswa Berhasil dihapus')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-success' role='alert'>Data Siswa Berhasil dihapus</div>";
+        header("location: ../../media.php?module=" . $module);
     } else {
-        echo "<script>
-            alert('Data siswa gagal dihapus')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-warning' role='alert'>Data Siswa Gagal dihapus</div>";
+        header("location: ../../media.php?module=" . $module);
     }
 } elseif ($module == 'siswa' and $act == 'edit') {
     $nisn = $_GET['id'];
@@ -60,14 +58,12 @@ if ($module == 'siswa' and $act == 'insert') {
 
 
     if ($connection->query($query)) {
-        echo "<script>
-            alert('Data Siswa Berhasil diedit')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-success' role='alert'>Data Siswa Berhasil diedit</div>";
+        header("location: ../../media.php?module=" . $module);
     } else {
-        echo "<script>
-            alert('Data siswa gagal diedit')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-warning' role='alert'>Data Siswa Gagal diedit</div>";
+        header("location: ../../media.php?module=" . $module);
     }
 }

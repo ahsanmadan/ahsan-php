@@ -26,5 +26,7 @@ elseif ($module == "siswa-edit") :
 elseif ($module == "buku") :
     include "module/buku/buku-view.php";
 
+elseif ($module == "buku-edit") :
+    include "module/buku/buku-edit.php";
 endif;
 ?>

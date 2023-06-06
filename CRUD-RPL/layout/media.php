@@ -1,4 +1,12 @@
-<?php include "config/koneksi.php" ?>
+<?php include "config/koneksi.php";
+// cek session aktif user
+session_start();
+if (empty($_SESSION['username'])) {
+    $_SESSION["alert"] =
+        "<div class='alert alert-danger' role='alert'>Silahkan Login terlebih dahulu</div>";
+    header("location: index.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -28,7 +28,6 @@
                         <td><?= $data["username"]; ?></td>
                         <td><?= $data["level"]; ?></td>
                         <td>
-                            <a href="?module=user-edit&id=<?= $data['id']; ?>" class="btn btn-warning">Edit</a>
                             <a href="module/user/aksi.php?module=user&act=delete&id=<?= $data['id']; ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>

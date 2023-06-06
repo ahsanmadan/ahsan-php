@@ -1,3 +1,16 @@
+<?php $module = !empty($_GET["module"]) ? $_GET["module"] : "" ?>
+
+<?php
+if ($module == '' or $module == 'home') {
+    $home = 'active';
+} elseif ($module == 'siswa') {
+    $siswa = 'active';
+} elseif ($module == 'user') {
+    $user = 'active';
+} elseif ($module == 'buku') {
+    $buku = 'active';
+}
+?>
 <div class="dashboard-nav overflow-hidden">
     <header>
         <a href="#!" class="menu-toggle">
@@ -9,15 +22,15 @@
         </a>
     </header>
     <nav class="dashboard-nav-list">
-        <a href="?module=home" class="dashboard-nav-item active">
+        <a href="?module=home" class="dashboard-nav-item <?= $home ?>">
             <i class="fas fa-home"></i>
             Beranda
         </a>
-        <a href="?module=siswa" class="dashboard-nav-item">
+        <a href="?module=siswa" class="dashboard-nav-item <?= $siswa ?>">
             <i class="fas fa-users"></i>
             Data siswa
         </a>
-        <a href="?module=buku" class="dashboard-nav-item">
+        <a href="?module=buku" class="dashboard-nav-item <?= $buku ?>">
             <i class="fas fa-book"></i>
             Data buku
         </a>
@@ -34,13 +47,13 @@
             </div>
         </div>
 
-        <a href="?module=user" class="dashboard-nav-item">
+        <a href="?module=user" class="dashboard-nav-item <?= $user ?>">
             <i class="fas fa-user"></i>
             Data user
         </a>
 
         <div class="nav-item-divider"></div>
-        <a href="#" class="dashboard-nav-item">
+        <a href="logout.php" class="dashboard-nav-item">
             <i class="fas fa-sign-out-alt"></i>
             Logout
         </a>

@@ -17,8 +17,8 @@ if ($module == 'buku' and $act == 'insert') {
     $jenis = $_POST['jenis'];
     $stok = $_POST['stok'];
 
-    $query = "INSERT INTO siswa_muda (isbn, judul_buku, pengarang, penerbit, tahun_terbit, jenis_buku, stok) 
-    VALUES ('$isbn', '$judul_buku', '$ngarang','$nerbit', '$tater' , '$jenis','$stok') ";
+    $query = "INSERT INTO siswa_buku (isbn, judul_buku, pengarang, penerbit, tahun_terbit, jenis_buku, stok) 
+    VALUES ('$isbn', '$judul', '$ngarang','$nerbit', '$tater' , '$jenis','$stok') ";
 
     if ($connection->query($query)) {
         session_start();
@@ -29,42 +29,47 @@ if ($module == 'buku' and $act == 'insert') {
     alert('Data gagal disimpan')
     </script>";
     }
-} elseif ($module == 'siswa' and $act == 'delete') {
-    $nisn = $_GET['id'];
+} elseif ($module == 'buku' and $act == 'delete') {
+    $isbn = $_GET['id'];
 
-    $query = "DELETE FROM siswa_muda WHERE nisn = '$nisn'";
+    $query = "DELETE FROM siswa_buku WHERE isbn = '$isbn'";
 
     if ($connection->query($query)) {
-        echo "<script>
-            alert('Data Siswa Berhasil dihapus')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-success' role='alert'>Data Buku Berhasil dihapus</div>";
+        header("location: ../../media.php?module=" . $module);
     } else {
-        echo "<script>
-            alert('Data siswa gagal dihapus')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-warning' role='alert'>Data Buku Gagal dihapus</div>";
+        header("location: ../../media.php?module=" . $module);
     }
-} elseif ($module == 'siswa' and $act == 'edit') {
-    $nisn = $_GET['id'];
-    $nama = $_POST['nama'];
-    $jurusan = $_POST['jurusan'];
-    $kelamin = $_POST['kelamin'];
-    $nohp = $_POST['nohp'];
-    $alamat = $_POST['alamat'];
-    $query = "UPDATE siswa_muda SET nama_siswa = '$nama', jurusan = '$jurusan', jenis_kelamin ='$kelamin',no_hp = '$nohp', alamat = '$alamat'
-    WHERE nisn = '$nisn'";
+} elseif ($module == 'buku' and $act == 'edit') {
+    $isbn = $_GET['id'];
+
+    $judul = $_POST['judul'];
+    $ngarang = $_POST['ngarang'];
+    $nerbit = $_POST['nerbit'];
+    $tater = $_POST['tater'];
+    $jenis = $_POST['jenis'];
+    $stok = $_POST['stok'];
+
+    $query = "UPDATE siswa_buku SET 
+                judul_buku = '$judul', 
+                pengarang = '$ngarang', 
+                penerbit ='$nerbit',
+                tahun_terbit= '$tater', 
+                jenis_buku = '$jenis', 
+                stok = '$stok'
+                WHERE isbn = '$isbn'";
 
 
     if ($connection->query($query)) {
-        echo "<script>
-            alert('Data Siswa Berhasil diedit')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-success' role='alert'>Data Buku Berhasil di Edit</div>";
+        header("location: ../../media.php?module=" . $module);
     } else {
-        echo "<script>
-            alert('Data siswa gagal diedit')
-            window.location = '../../media.php?module=siswa';
-            </script>";
+        session_start();
+        $_SESSION["alert"] = "<div class='alert alert-warning' role='alert'>Data buku gagal di Edit</div>";
+        header("location: ../../media.php?module=" . $module);
     }
 }

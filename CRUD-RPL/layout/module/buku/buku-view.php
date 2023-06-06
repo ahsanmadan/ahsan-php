@@ -4,11 +4,10 @@
     </div>
     <div class="card-body">
         <?php
-        session_start();
         if (!empty($_SESSION['alert'])) :
             echo $_SESSION["alert"];
         endif;
-        session_destroy();
+        unset($_SESSION['alert']);
         ?>
         <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#buku-modal">Tambah data</button>
         <table class="table table-striped mt-3">
@@ -62,7 +61,7 @@
             <div class="modal-body">
                 <form action="module/buku/aksi.php?module=buku&act=insert" method="post">
                     <div class="mb-3">
-                        <label for="nisn" class="form-table">ISBN</label>
+                        <label for="isbn" class="form-table">ISBN</label>
                         <input type="text" name="isbn" class="form-control" placeholder="ISBN buku" required>
                     </div>
                     <div class="mb-3">

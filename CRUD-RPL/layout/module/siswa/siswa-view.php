@@ -11,11 +11,10 @@
     </div>
     <div class="card-body">
         <?php
-        session_start();
         if (!empty($_SESSION['alert'])) :
             echo $_SESSION["alert"];
         endif;
-        session_destroy();
+        unset($_SESSION['alert']);
         ?>
         <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#siswa-modal">Tambah data</button>
         <table class="table table-striped mt-3">
