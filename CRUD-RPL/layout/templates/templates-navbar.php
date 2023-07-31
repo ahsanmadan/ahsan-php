@@ -41,7 +41,7 @@ if ($module == '' or $module == 'home') {
                 Pustaka
             </a>
             <div class="dashboard-nav-dropdown-menu">
-                <a href="#" class="dashboard-nav-dropdown-item">Peminjaman</a>
+                <a href="?module=pinjam" class="dashboard-nav-dropdown-item">Peminjaman</a>
                 <a href="#" class="dashboard-nav-dropdown-item">Pengembalian</a>
 
             </div>
