@@ -8,25 +8,9 @@
 </head>
 
 <body>
-    <h3>Data Pribadi</h3>
-    <table>
-        <tr>
-            <td>Nama</td>
-            <td>: Ahsan Ramadan</td>
-        </tr>
-        <tr>
-            <td>Jenis Kelamin</td>
-            <td>: Laki laki</td>
-        </tr>
-        <tr>
-            <td>Alamat</td>
-            <td>: Jalan Barau Barau</td>
-        </tr>
-        <tr>
-            <td>No Whatsapp</td>
-            <td>: 0896 2150 0376</td>
-        </tr>
-    </table>
+    <h3>Biodata</h3>
+
+
 </body>
 
 </html>
