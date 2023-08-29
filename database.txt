@@ -1,0 +1,14 @@
+1. Buat database aplikasi pemilihan ketua ipm
+
+db_PemilihanIPM
+
+t_calonKetua,t_pemilih,t_akunSiswa
+
+t_calonKetua
+id_kadidat, nisn, nama, kelas, ttl , gender , alamat,visi&misi
+
+t_pemilih
+id,nisn,nama,kelas,pilihan,gender
+
+t_akunSiswa
+nisn,password,nama,kelas,ttl,gender,alamat,level(default:user)

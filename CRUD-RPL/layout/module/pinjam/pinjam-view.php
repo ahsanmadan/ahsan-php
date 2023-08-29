@@ -23,20 +23,24 @@
                 <?php
                 // query select data buku
                 $no = 1;
-                $query = "SELECT * FROM siswa_peminjaman";
+                $query = "SELECT * FROM ((siswa_peminjaman as pinjam 
+                INNER JOIN siswa_muda ON pinjam.nisn = siswa_muda.nisn)
+                INNER JOIN siswa_buku ON pinjam.isbn = siswa_buku.isbn)";
+
                 $conn = mysqli_query($connection, $query);
                 while ($data = mysqli_fetch_array($conn)) {
+
                 ?>
                     <!-- fetch data buku -->
                     <tr>
                         <td><?= $no ?></td>
                         <td><?= date('d-m-Y', strtotime($data['tgl_pinjam'])); ?></td>
-                        <td><?= $data["nisn"]; ?></td>  
-                        <td><?= $data["isbn"]; ?></td>
+                        <td><?= $data["nama_siswa"]; ?></td>
+                        <td><?= $data["judul_buku"]; ?></td>
                         <td><?= date('d-m-Y', strtotime($data['tgl_kembali'])); ?></td>
                         <td class="flex-col">
                             <a href="?module=peminjaman-edit&id=<?= $data['isbn']; ?>" class="btn btn-warning">Edit</a>
-                            <a href="module/pinjam/aksi.php?module=pinjam&act=delete&id=<?= $data['isbn']; ?>" class="btn btn-danger">Hapus</a>
+                            <a href="module/pinjam/aksi.php?module=pinjam&act=delete&id=<?= $data['id_peminjaman']; ?>&isbn=<?=$data['isbn'] ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                 <?php $no++;

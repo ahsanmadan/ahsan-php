@@ -15,7 +15,7 @@ class Biodata extends CI_Controller
         $data['wa'] = '0896 2150 0376';
         $this->load->view('biodata/data-pribadi.php', $data);
     }
-    public function daftarSiswa()
+    public function dataSiswa()
     {
         $data['judul'] = "Daftar Siswa SMK MUDA";
 
@@ -142,6 +142,6 @@ class Biodata extends CI_Controller
 
         ];
         $data['siswa'] = $siswa;
-        $this->load->view('biodata/daftar-siswa.php', $data);
+        $this->load->view('biodata/data-siswa.php', $data);
     }
 }

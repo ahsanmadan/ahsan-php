@@ -16,12 +16,30 @@ if ($module == 'pinjam' and $act == 'insert') {
     $pinjam = date('Y-m-d');
     $balik = $_POST['tgl_balik'];
     $status = $_POST['status'];
-    $query = "INSERT INTO siswa_peminjaman (id_peminjaman, nisn, isbn, tgl_pinjam, tgl_kembali, status) 
+
+    // query ambil data stok
+    $query = "SELECT isbn,stok from siswa_buku WHERE isbn = $isbn";
+    $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_array($result);
+    // masukkan jumlah stok ke variabel
+    $stok = $row['stok'];
+    // lakukan pengurangan stok
+    $newStok = $stok - 1;
+
+    // query insert peminjaman
+    $query_pinjam = "INSERT INTO siswa_peminjaman (id_peminjaman, nisn, isbn, tgl_pinjam, tgl_kembali, status) 
     VALUES ($id, '$nisn', '$isbn', '$pinjam', '$balik','$status') ";
 
-    if ($connection->query($query)) {
+    // query update stok 
+    $query_stok = "UPDATE siswa_buku SET stok = $newStok WHERE isbn = '$isbn'";
+
+    if ($connection->query($query_pinjam)) {
         session_start();
         $_SESSION["alert"] = "<div class='alert alert-success' role='alert'>Data Peminjaman berhasil disimpan</div>";
+
+        // jalankan query update stok
+        $connection->query($query_stok);
+
         header("location: ../../media.php?module=" . $module);
     } else {
         echo "<script>
@@ -29,13 +47,29 @@ if ($module == 'pinjam' and $act == 'insert') {
     </script>";
     }
 } elseif ($module == 'pinjam' and $act == 'delete') {
-    $nisn = $_GET['id'];
+    $id = $_GET['id'];
+    $isbn = $_GET['isbn'];
 
-    $query = "DELETE FROM siswa_muda WHERE nisn = '$nisn'";
+    // query ambil data stok
+    $query = "SELECT isbn,stok from siswa_buku WHERE isbn = $isbn";
+    $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_array($result);
+    // masukkan jumlah stok ke variabel
+    $stok = $row['stok'];
+    // lakukan pengurangan stok
+    $newStok = $stok + 1;
 
-    if ($connection->query($query)) {
+    $query_pinjam = "DELETE FROM siswa_peminjaman WHERE id_peminjaman = '$id'";
+
+    $query_stok = "UPDATE siswa_buku SET stok = $newStok WHERE isbn = '$isbn'";
+
+    if ($connection->query($query_pinjam)) {
         session_start();
         $_SESSION["alert"] = "<div class='alert alert-success' role='alert'>Data Siswa Berhasil dihapus</div>";
+
+        // jalankan query update stok
+        $connection->query($query_stok);
+
         header("location: ../../media.php?module=" . $module);
     } else {
         session_start();
